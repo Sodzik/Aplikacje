@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tabela</title>
+</head>
+<body>
+    <p>Nazwisko: <input type="text" id="nazwisko"></p>
+    <input type="checkbox" id="religia"> Religia <br>
+    <input type="checkbox" id="zdrowotna"> Edukacja Zdrowotna <br>
+    <input type="checkbox" id="wizerunek"> Zgoda na Wizerunek <br><br>
+    <button id="doTablicy" onclick="f1()">Dodaj do Tablicy</button>
+    <p>Kto chodzi na religie</p> <span id="uno"></span> <button id="naReligie" onclick="f2(1)">Sprawdź</button>
+    <br><br>
+    <p>Kto chodzi na edukacje zdrowotną</p> <span id="dos"></span> <button id="naEduZdr" onclick="f2(2)">Sprawdź</button>
+    <br><br>
+    <p>Kto pozwala na wyświetlanie swojego wizerunku</p> <span id="tres"></span> <button id="naWizer" onclick="f2(3)">Sprawdź</button>
+   
+
+    <script>
+        let uczniowie = []
+
+        function f1() {
+        let Naz = document.getElementById("nazwisko").value;
+        let Rel = document.getElementById("religia").checked;
+        let Zdr = document.getElementById("zdrowotna").checked;
+        let Wiz = document.getElementById("wizerunek").checked;
+        let uczen = [Naz, Rel, Zdr, Wiz]
+        uczniowie.push(uczen);
+        }
+
+        function f2(a) {
+            let zgoda = [];
+            for (let i = 0; i < uczniowie.length; i++) {
+        if (uczniowie[i][a]) {
+            zgoda.push(uczniowie[i][0]);
+        }
+    }
+        let ElementID;
+        if (a === 1) {
+            ElementID = "uno";
+        } else if (a === 2) {
+            ElementID = "dos";
+        } else {
+            ElementID = "tres";
+        }
+        document.getElementById(ElementID).innerText = zgoda.join(", ");
+        }
+
+
+
+    </script>
+</body>
+</html>

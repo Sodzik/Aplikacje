@@ -1,0 +1,55 @@
+body{
+    background-color: floralwhite;
+}
+
+header, footer{
+    background-color: sienna;
+    color: white;
+    text-align: center;
+    width: auto;
+    height: 75px;
+    padding: 5px;
+}
+
+#obrazy img{
+    width: fit-content;
+    height: fit-content;
+}
+
+#kontener {
+    display: flex;
+    justify-content: space-between; 
+    align-items: flex-start; 
+}
+
+#lewy{
+    background-color: rgb(201, 196, 157);
+    margin: 10px;
+    padding: 20px;
+    width: 45%;
+    height: 400px;
+    box-shadow: 5px 5px 10px dimgray;
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+}
+#lewy label, input{
+    margin: 5px;
+}
+
+#naPrawe{ 
+    text-align: center;
+    margin: 10px;
+    padding: 20px;
+    width: 45%;
+    height: 400px;
+}
+
+#prawy{
+    text-align: left;
+}
+
+#guzik{
+    background-color: sienna;
+    color: white;
+    padding: 5px;
+    border-radius: 18px;
+}

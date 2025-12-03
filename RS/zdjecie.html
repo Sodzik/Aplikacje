@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Fotografia</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header>
+        <h1>Fotografia Artystyczna</h1>
+    </header>
+    <section id="obrazy">
+        <img src="Obrazy/1.jpg" alt="obrazy do sprzedaży" title="1.jpg">
+        <img src="Obrazy/2.jpg" alt="obrazy do sprzedaży" title="2.jpg">
+        <img src="Obrazy/3.jpg" alt="obrazy do sprzedaży" title="3.jpg">
+        <img src="Obrazy/4.jpg" alt="obrazy do sprzedaży" title="4.jpg">
+        <img src="Obrazy/5.jpg" alt="obrazy do sprzedaży" title="5.jpg">
+        <img src="Obrazy/6.jpg" alt="obrazy do sprzedaży" title="6.jpg">
+        <img src="Obrazy/7.jpg" alt="obrazy do sprzedaży" title="7.jpg">
+        <img src="Obrazy/8.jpg" alt="obrazy do sprzedaży" title="8.jpg">
+        <img src="Obrazy/9.jpg" alt="obrazy do sprzedaży" title="9.jpg">
+        <img src="Obrazy/10.jpg" alt="obrazy do sprzedaży" title="10.jpg">
+        
+    </section>
+    <main id="kontener">
+        <section id="lewy">
+            <h3>Zamówienie</h3>
+            <label for="plikObrazu">Wybierz obraz:</label>
+            <input type="file" id="plikObrazu" accept=".jpg, .jpeg">
+            <br>
+            <label for="ileKopii">Liczba Kopii:</label>
+            <input type="number" id="ileKopii">
+            <br>
+            <input type="radio" name="papier" id="blysk" checked> Papier błyszczący<br>
+            <input type="radio" name="papier" id="mat"> Papier matowy<br><br>
+            <button onclick="dodaj()" id="guzik">Dodaj produkt</button>
+        </section>
+        <section id="naPrawe">
+        <nav>
+            <a href="">Regulamin</a>
+            <a href="">Usługi</a>
+            <a href="">Zdjęcie</a>
+        </nav>
+        <section id="prawy">
+            <p><b>Koszyk</b></p>
+        </section>
+        </section>
+    </main>
+    <footer>
+        <p>Autor strony: Robert Stanek</p>
+    </footer>
+</body>
+<script>
+    let zaznaczoneM = document.getElementById("mat").checked;
+    let papierCena = 1.5;
+    if (zaznaczoneM) 
+        papierCena = 2;
+
+
+</script> 
+</html>

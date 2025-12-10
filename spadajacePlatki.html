@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Płatki Śniegu</title>
+    <style>
+        .main{
+            width: 900px;
+        }
+        .plat{
+            position: absolute;
+            animation-name: spadanie;
+            animation-iteration-count: infinite;
+        }
+        @keyframes spadanie{
+            0%{
+                transform: translateY(0) rotate(0deg);
+                
+                opacity: 0.1;
+            }
+            10%{
+                transform: translateY(10vh) rotate(72deg);
+                opacity: 0.2;
+            }
+            20%{
+                transform: translateY(20vh) rotate(144deg);
+                opacity: 0.4;
+            }
+            30%{
+                transform: translateY(30vh) rotate(216deg);
+                opacity: 0.6;
+            }
+            40%{
+                transform: translateY(40vh) rotate(288deg);
+                opacity: 0.8;
+            }
+            50%{
+                transform: translateY(50vh) rotate(360deg);
+                opacity: 1;
+            }
+            60%{
+                transform: translateY(60vh) rotate(432deg);
+                opacity: 0.8;
+            }
+            70%{
+                transform: translateY(70vh) rotate(504deg);
+                opacity: 0.6;
+            }
+            80%{
+                transform: translateY(80vh) rotate(576deg);
+                opacity: 0.4;
+            }
+            90%{
+                transform: translateY(90vh) rotate(648deg);
+                opacity: 0.2;
+            }
+            100%{
+                transform: translateY(100vh) rotate(720deg);
+                opacity: 0;
+            }
+        }
+    </style>
+</head>
+<body>
+    <main id="main"></main>
+    <script>
+        function losowa(a, b){
+            let c = Math.floor(Math.random()*(b-a+1)) + a;
+            return c;
+        }
+
+        function spadaniePlatek() {
+            let platek = document.createElement("img");
+            platek.src = 'gwiazdka.png'
+            platek.classList.add('plat')
+
+            let odLewej = losowa(2, 94);
+            platek.style.left = odLewej + "vh"
+
+            let rozmiar = losowa(2, 5);
+            platek.style.width = rozmiar + "vh"
+            platek.style.height = rozmiar + "vh"
+
+            let czasSpadania = losowa(40, 120)
+            platek.style.animationDuration = czasSpadania + "s"
+
+            let delay = losowa(0, 15);
+            platek.style.animationDelay = -delay + "s"
+
+            let main = document.getElementById("main")
+            main.appendChild(platek);
+        }
+
+        
+        for (let i = 0; i < 40; i++){
+            spadaniePlatek()
+        }
+    </script>
+</body>
+</html>
